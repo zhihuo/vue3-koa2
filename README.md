@@ -34,16 +34,18 @@
 npm install
 # 运行后端服务
    1. 首先启动MongoDB: sudo mongod
-   2. 启动node，npm start  (注意：在package.json 文件的scripts下设置："start": "nodemon start.js")， 如下
-    "scripts": {
+   2. 启动node: npm start  (注意：在package.json 文件的scripts下设置："start": "nodemon start.js")，
+      如下
+      "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "nodemon start.js"
-    },
+      },
 ```
 
 ```
   1. 安装了nodemon，可以实时更新koa2里面编写的内容
-  2. start.js 设置了babel-register、babel-plugin-transform-es2015-modules-commonjs插件，用来是映射开启index.js的文件
+  2. start.js 设置了babel-register、babel-plugin-transform-es2015-modules-commonjs插件，
+     用来是映射开启index.js的文件
   3. index.js 是服务的所以方法的出口，端口的输出
 
   目录格式说明：
