@@ -16,18 +16,23 @@ router.post('/login',async(ctx)=>{
 
     //引入Login的model
     const Login = mongoose.model('Login')
-
+        
+    //查找用户名是否存在，如果存在开始比对密码
     await Login.findOne({userName:userName}).then(async(result)=>{
         console.log('result===', result)
         if(result){
             // 设置用户名cookie
             ctx.session.user = result.userName;
+            //因为是实例方法，所以要new出对象，才能调用
             let newLogin = new Login()
+            //当用户名存在时，开始比对密码
             await newLogin.comparePassword(password,result.password)
             .then(isMatch=>{
+                //返回比对结果
                 ctx.body={status:200,msg:isMatch}
             })
             .catch(error=>{
+                //出现异常，返回异常
                 console.log(error)
                 ctx.body={status:500,msg:error}
             })
