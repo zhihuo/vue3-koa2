@@ -33,7 +33,7 @@
 # 安装插件
 npm install
 # 运行后端服务
-   1. 首先启动MongoDB, sudo mongod
+   1. 首先启动MongoDB: sudo mongod
    2. 启动node，npm start  (注意：在package.json 文件的scripts下设置："start": "nodemon start.js")， 如下
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
