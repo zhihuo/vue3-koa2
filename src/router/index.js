@@ -20,7 +20,8 @@ const router = new Router({
         {
             path: '/users',
             name: 'users',
-            component: Users
+            component: Users,
+            meta: { title: '用户信息' }
         },
         {
             path: '/login',
@@ -37,17 +38,20 @@ const router = new Router({
         {
             path: '/index',
             name: 'index',
-            component: Indexpage
+            component: Indexpage,
+            meta: { title: '首页' }
         },
         {
             path: '/infolist',
             name: 'infolist',
-            component: Infolist
+            component: Infolist,
+            meta: { title: '列表' }
         },
         {
             path: '/product',
             name: 'product',
-            component: Product
+            component: Product,
+            meta: { title: '产品' }
         }
     ]
 })

@@ -7,6 +7,7 @@
       </div>
       <div class="main" v-else>
         <hearder></hearder>
+        <breadcrumb></breadcrumb>
         <div class="main">
           <sidebar></sidebar>
           <div class="content">
@@ -26,12 +27,14 @@
 <script>
 import Hearder from './components/header.vue'
 import Sidebar from './components/sidebar.vue'
+import Breadcrumb from './components/breadcrumb.vue'
 
 export default {
   name: 'app',
   components: {
     Hearder,
-    Sidebar
+    Sidebar,
+    Breadcrumb
   },
   computed: {
     enShowLayout() {
